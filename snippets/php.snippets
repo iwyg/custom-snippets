@@ -1,0 +1,178 @@
+snippet ns
+	namespace \${1:ns};
+
+snippet interface
+	interface ${1:name} 
+	{
+		public function ${2:method}();
+	}
+
+snippet class
+	class ${1:name} 
+	{
+		${2:access} function __construct(${3})
+		{
+			${4}		
+		}
+	}
+
+snippet absclass
+	abstract class ${1:name} 
+	{
+		${2:access} function __construct()	
+		{
+			
+		}
+	}
+
+snippet absclassextend
+	abstract class ${1:name} extends ${2:class}
+	{
+		${3:access} function __construct()	
+		{
+			// ${4:body}
+		}
+	}
+
+snippet constr
+	${1:access} function __construct(${2:args})
+	{
+	
+	}
+
+snippet destr
+	${1:access} function __destruct(${2:args})
+	{
+	
+	}
+
+snippet mget
+	public function __get(${1:prop})
+	{
+	
+	}
+
+snippet mset
+	public function __set(${1:prop}, ${2:value})
+	{
+	
+	}
+
+snippet method
+	${1:access} function ${2:name}(${3})
+	{
+		// ${4:body}
+	}
+
+snippet const
+	const ${1:name} = ${2:value}${3}
+
+snippet prop
+	${1:access}${2:type} $${3:name}${4}
+
+snippet ocall
+	$${1:obj}->${4:methood}(${3:args})${4}
+
+
+# functions
+snippet glob
+	glob(${1:path});
+
+snippet globloop
+	foreach (glob(${1:path} as ${2:name})) {
+		${3}
+	}
+	
+snippet pmatch
+	preg_match('${1:needle}', ${2:heystack}, ${3:matches})${4}
+
+snippet psplit
+	preg_split('${1:needle}', ${2:heystack}, ${3:-1}, ${4:PREG_SPLIT_NO_EMPTY})${5}
+
+snippet inarray
+	in_array(${1:needle}, ${2:heystack})${3}
+
+snippet extract
+	extract(${1:array})
+
+# operators
+
+snippet andor
+	(${1} && ${2}) || ${3}
+
+snippet ternary
+	${1:condition} ? ${2} : ${3}
+
+# statements
+snippet if
+	if (${1:condition}) {
+		${2}	
+	}
+
+snippet ifelse
+	if (${1:condition}) {
+		${2}	
+	} else {
+		${3}	
+	}
+
+snippet while 
+	while (${1:condition})	{
+		// ${2:do}
+	}
+
+snippet for 
+	for (${1}; ${2}; ${3})	{
+		// ${4:do}
+	}
+
+snippet foreach 
+	foreach (${1:data} as ${2:val})	{
+		// ${3:do}
+	}
+
+snippet foreachkv 
+	foreach (${1:data} as ${2:key} => ${3:val})	{
+		// ${4:do}
+	}
+
+# misc
+snippet asocarr
+	array(
+		'${1:key}' => ${2:value}
+	)${3}
+
+# globals
+
+snippet post
+	$_POST
+snippet postkey
+	$_POST['${1:key}']
+snippet get
+	$_GET
+snippet getkey
+	$_GET['${1:key}']
+snippet request
+	$_REQUEST
+snippet requestkey
+	$_REQUEST['${1:key}']
+snippet server
+	$_SERVER
+snippet serverkey
+	$_SERVER['${1:key}']
+
+# php filter
+snippet filter_hv
+	filter_has_var(${1:INPUT_POST}, ${1:var})
+snippet filter_id
+	filter_id(${1:name})
+snippet filter_ia
+	filter_input_array(${1:INPUT_POST}, ${2:filterarray})
+snippet filter_in
+	filter_input(${1:INPUT_POST}, ${2:name}, ${3:FILTER_VALIDATE_EMAIL})
+snippet filter_li
+	filter_list()
+snippet filter_va
+	filter_var_array(${1:array}, ${2:definition});
+snippet filter_v
+	filter_var(${1:variable}, ${2:FILTER_SANITIZE_STRING}, ${3:options});

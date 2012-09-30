@@ -1,0 +1,16 @@
+snippet stylesheet
+	<?xml version="1.0" encoding="utf-8"?>
+	<xsl:stylesheet version="${1:1.0}" xmlns:xsl="${2:http://www.w3.org/1999/XSL/Transform}">
+
+		<xsl:template match="${3:/}">
+		</xsl:template>
+
+	</xsl:stylesheet>
+
+snippet apply
+	<xsl:apply-templates select="${1:node}"/>
+
+snippet call
+	<xsl:call-template name="${1:name}">
+		<xsl:with-param name="${2:name}" select="${3:select}"/>
+	</xsl:call-template>
