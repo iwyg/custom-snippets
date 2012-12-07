@@ -1,5 +1,5 @@
 snippet ns
-	namespace \${1:ns};
+	namespace ${1:ns};
 
 snippet interface
 	interface ${1:name} 
@@ -10,38 +10,38 @@ snippet interface
 snippet class
 	class ${1:name} 
 	{
-		${2:access} function __construct(${3})
+		${2:public} function __construct(${3})
 		{
 			${4}		
 		}
 	}
 
-snippet absclass
+snippet abstractclass
 	abstract class ${1:name} 
 	{
-		${2:access} function __construct()	
+		${2:public} function __construct()	
 		{
 			
 		}
 	}
 
-snippet absclassextend
+snippet extendabstractclass
 	abstract class ${1:name} extends ${2:class}
 	{
-		${3:access} function __construct()	
+		${3:public} function __construct()	
 		{
 			// ${4:body}
 		}
 	}
 
-snippet constr
-	${1:access} function __construct(${2:args})
+snippet construct
+	${1:public} function __construct(${2:args})
 	{
 	
 	}
 
-snippet destr
-	${1:access} function __destruct(${2:args})
+snippet destruct
+	${1:public} function __destruct(${2:args})
 	{
 	
 	}
@@ -59,7 +59,7 @@ snippet mset
 	}
 
 snippet method
-	${1:access} function ${2:name}(${3})
+	${1:public} function ${2:name}(${3})
 	{
 		// ${4:body}
 	}
@@ -68,7 +68,7 @@ snippet const
 	const ${1:name} = ${2:value}${3}
 
 snippet prop
-	${1:access}${2:type} $${3:name}${4}
+	${1:public}${2:type} $${3:name}${4}
 
 snippet ocall
 	$${1:obj}->${4:methood}(${3:args})${4}
@@ -176,3 +176,15 @@ snippet filter_va
 	filter_var_array(${1:array}, ${2:definition});
 snippet filter_v
 	filter_var(${1:variable}, ${2:FILTER_SANITIZE_STRING}, ${3:options});
+
+# Misc
+snippet docblock
+	/**
+	 * ${1:Class}
+	 *
+	 * @package ${2:Package}
+	 * @version ${3:Version}
+	 * @copyright 2012-2015 ${4:Thomas Appel}. <http://thomas-appel.com>
+	 * @author Thomas Appel <${5:mail@thomas-appel.com}>
+	 * @license MIT Licence ${6:http://opensource.org/licenses/MIT}
+	 */

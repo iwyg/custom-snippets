@@ -1,3 +1,5 @@
+/*vim: et:ts=2:sw=2:sts=2*/
+
 snippet stylesheet
 	<?xml version="1.0" encoding="utf-8"?>
 	<xsl:stylesheet version="${1:1.0}" xmlns:xsl="${2:http://www.w3.org/1999/XSL/Transform}">
@@ -14,3 +16,28 @@ snippet call
 	<xsl:call-template name="${1:name}">
 		<xsl:with-param name="${2:name}" select="${3:select}"/>
 	</xsl:call-template>
+
+snippet atpl
+	<xsl:template match="${1:xpath}" ${2}>
+		${3}
+	</xsl:template>
+
+snippet ntpl
+	<xsl:template name="${1:name}">
+		${2}
+	</xsl:template>
+
+snippet element
+	<xsl:element name="${1:name}">
+		${2}
+	</xsl:element>
+
+snippet attr
+	<xsl:attribute name="${1:name}">
+		${2}
+	</xsl:attribute>
+
+snippet var
+	<xsl:variable name="${1:name}">
+		${2}
+	</xsl:variable>

@@ -1,0 +1,22 @@
+#entrymanager
+snippet testcase
+	class ${1:ClassName}Test extends PHPUnit_Framework_TestCase
+	{
+		/**
+		 * @var ${2:ClassName}
+		 */
+		protected $object;
+
+		protected function setUp()
+		{
+
+		}
+
+		protected function tearDown()
+		{
+
+		}
+	}
+
+snippet mock
+	$this->getMock(${1:'ClassName'})${2}
