@@ -41,3 +41,32 @@ snippet var
 	<xsl:variable name="${1:name}">
 		${2}
 	</xsl:variable>
+
+snippet each
+	<xsl:for-each select="${1:select}">
+		${2:body}
+	</xsl:for-each>
+
+snippet choose
+	<xsl:choose>
+		<xsl:when test="${1:test}">
+			${2:body}
+		</xsl:when>
+		<xsl:otherwise></xsl:otherwise>
+	</xsl:choose>
+
+snippet when 
+	<xsl:when test="${1:test}">
+		${2:body}
+	</xsl:when>
+
+snippet if
+	<xsl:if test="${1:test}">
+		${2:body}
+	</xsl:if>
+
+snippet value
+	<xsl:value-of select="${1:select}"/>
+
+snippet copy
+	<xsl:copy-of select="${1:select}"/>
