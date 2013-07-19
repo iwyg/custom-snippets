@@ -1,0 +1,23 @@
+snippet testcase "PHPUnit testcase" b
+class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends PHPUnit_Framework_TestCase
+{
+	/**
+	 * @var ${2:ClassName}
+	 */
+	protected $object;
+
+	protected function setUp()
+	{
+
+	}
+
+	protected function tearDown()
+	{
+
+	}
+}
+endsnippet
+
+snippet mock "get Mock"
+	$this->getMock(${1:'ClassName'})${2}
+endsnippet

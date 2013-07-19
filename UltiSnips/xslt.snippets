@@ -1,0 +1,86 @@
+extends html
+
+snippet stylesheet "XSLT Stylesheet" b
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="${1:1.0}" xmlns:xsl="${2:http://www.w3.org/1999/XSL/Transform}">
+
+	<xsl:template match="${3:/}">
+	</xsl:template>
+
+</xsl:stylesheet>
+endsnippet
+
+snippet apply
+<xsl:apply-templates select="${1:node}"/>
+endsnippet
+
+snippet call
+<xsl:call-template name="${1:name}">
+	<xsl:with-param name="${2:name}" select="${3:select}"/>
+</xsl:call-template>
+endsnippet
+
+snippet atpl
+<xsl:template match="${1:xpath}" ${2}>
+	${3}
+</xsl:template>
+endsnippet
+
+snippet ntpl
+<xsl:template name="${1:name}">
+	${2}
+</xsl:template>
+endsnippet
+
+snippet element
+<xsl:element name="${1:name}">
+	${2}
+</xsl:element>
+endsnippet
+
+snippet attr
+<xsl:attribute name="${1:name}">
+	${2}
+</xsl:attribute>
+endsnippet
+
+snippet var
+<xsl:variable name="${1:name}">
+	${2}
+</xsl:variable>
+endsnippet
+
+snippet each
+<xsl:for-each select="${1:select}">
+	${2:body}
+</xsl:for-each>
+endsnippet
+
+snippet choose
+<xsl:choose>
+	<xsl:when test="${1:test}">
+		${2:body}
+	</xsl:when>
+	<xsl:otherwise></xsl:otherwise>
+</xsl:choose>
+endsnippet
+
+snippet when 
+<xsl:when test="${1:test}">
+	${2:body}
+</xsl:when>
+endsnippet
+
+snippet if
+<xsl:if test="${1:test}">
+	${2:body}
+</xsl:if>
+endsnippet
+
+snippet value
+<xsl:value-of select="${1:select}"/>
+endsnippet
+
+snippet copy
+<xsl:copy-of select="${1:select}"/>
+endsnippet
