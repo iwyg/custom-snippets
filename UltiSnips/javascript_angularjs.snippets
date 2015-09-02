@@ -1,0 +1,68 @@
+# Angular directive
+snippet ngd "Angular directive"
+${1:app}.directive('${2:directive}', function () {
+	return {
+		restrict: '${3:ACE}',
+		link: function (scope, element, attrs) {
+		$0
+		}
+	};
+});
+endsnippet
+
+snippet ngdc "A directive with a compiler function"
+${1:app}.directive('${2:directive}', function () {
+	return {
+		restrict: '${3:ACE}',
+		compile: function (element, attrs, transclusion) {
+			return function (scope, element, attrs) {
+			$0
+			};
+		}
+	};
+});
+endsnippet
+
+snippet ngm "Angular Module"
+angular.module('${1:moduleName}', []);
+endsnippet
+
+snippet nggm "Angular Module"
+angular.module('${1:moduleName}');
+endsnippet
+
+snippet ngc "Angular controller"
+${1:app}.controller('${2:ControllerName}', ['${3:$scope}', function ($3) {
+	//
+}]);
+endsnippet
+
+snippet ngf "Angular factory"
+${1:app}.factory('${2:FactoryName}', ['${3:$http}', function ($3) {
+	return ${4};
+}]);
+endsnippet
+
+snippet ngs "Angular service"
+${1:app}.service('${2:ServiceName}', ['${3:$http}', function ($3) {
+	return ${4};
+}]);
+endsnippet
+
+snippet ngeach "Angular for each"
+angular.forEach(${1:data}, function (${2:value}, ${3:key}) {
+	$0
+});
+endsnippet
+
+snippet sw "scope.$watch"
+scope.$watch('${1:attribute}', function (${2:changedAttribute}) {
+	$0
+}); 
+endsnippet
+
+snippet $sw "$scope.$watch"
+$scope.$watch('${1:attribute}', function (${2:changedAttribute}) {
+	$0
+}); 
+endsnippet

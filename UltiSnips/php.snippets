@@ -1,7 +1,27 @@
+snippet inhdc "inheritdoc declaration"
+/**
+ * {@inheritdoc}
+ */
+endsnippet
+
+snippet oget "member getter"
+public function get${1:Name}($${2:attribute}) 
+{
+	return isset($this->${3:$2s}[$${4:$2}]) ? $this->${5:$3}[$$4] : null;
+}
+endsnippet
+
+snippet oset "member setter"
+public function set${1:Name}($${2:attribute}, $${3:value}) 
+{
+	$this->${4:$2s}[$${4:$2}] = $$3;
+}
+endsnippet
+
 snippet doc "PHP Document" b
 <?php
 
-/**
+/*
  * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
@@ -15,7 +35,7 @@ endsnippet
 snippet classdoc "PHP Document" b
 <?php
 
-/**
+/*
  * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
@@ -27,11 +47,13 @@ snippet classdoc "PHP Document" b
 namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
 
 /**
- * @class ${6:`!v Filename('', 'myClass')`}
- * @package
+ * @class ${6:`!v Filename('')`}
+ *
+ * @package $1
  * @version $Id$
+ * @author $2 <$3>
  */
-class ${7:`!v Filename('', 'myClass')`} ${8}
+$0class ${7:$6} ${8}
 {
 	${9}
 }
@@ -40,7 +62,7 @@ endsnippet
 snippet interfacedoc "PHP Document" b
 <?php
 
-/**
+/*
  * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
@@ -52,15 +74,41 @@ snippet interfacedoc "PHP Document" b
 namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
 
 /**
- * @class ${6:`!v Filename('', 'myClass')`}
- * @package
+ * @interface ${6:`!v Filename('')`}
+ *
+ * @package $1
  * @version $Id$
+ * @author $2 <$3>
  */
-interface ${7:`!v Filename('', 'myClass')`} ${8}
+interface ${7:$6}$0
 {
-	${9}
 }
+endsnippet
 
+snippet traitdoc "PHP Document" b
+<?php
+
+/*
+ * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
+ *
+ * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
+ *
+ * ${4:For full copyright and license information, please refer to the LICENSE file
+ * that was distributed with this package.}
+ */
+
+namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+
+/**
+ * @trait ${6:`!v Filename('')`}
+ *
+ * @package $1
+ * @version $Id$
+ * @author $2 <$3>
+ */
+$0trait ${7:$6}
+{
+}
 endsnippet
 
 snippet ns "Namespace" b
@@ -79,7 +127,6 @@ class ${1:`!v Filename('', 'myClass')`}
 {
 	${2:public} function __construct(${3})
 	{
-		${4}		
 	}
 }
 endsnippet
@@ -257,9 +304,9 @@ foreach ($${1:data} as $${2:key} => $${3:val}) {
 endsnippet
 # misc
 snippet asocarr
-array(
+[
 	'${1:key}' => ${2:value}
-)${3}
+]${3}
 endsnippet
 
 # globals
@@ -339,4 +386,29 @@ endsnippet
 
 snippet vd "var_dump"
 var_dump(${1:variable});
+endsnippet
+
+snippet sg "Setter and Getter pairs" b
+
+/**
+ * set `!p snip.rv=t[1].lower()`.	
+ * 
+ * @param ${3:type} $$2 ${4:description}
+ * @return void
+ */
+public function set${1:Property}($${2:value})
+{
+	$this->`!p snip.rv=t[1].lower()` = $$2;	
+}
+
+/**
+ * Get `!p snip.rv=t[1].lower()`.	
+ * 
+ * @return mixed
+ */
+public function get$1()
+{
+	return $this->`!p snip.rv=t[1].lower()`;	
+}
+
 endsnippet
