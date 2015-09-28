@@ -18,6 +18,14 @@ class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnit_Framework_TestCas
 }
 endsnippet
 
+snippet testcase "PHPUnit_Framework_TestCase" b
+
+class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnit_Framework_TestCase
+{
+	$0
+}
+endsnippet
+
 snippet mock "get Mock"
 $this->getMock(${1:'ClassName'})${2}
 endsnippet

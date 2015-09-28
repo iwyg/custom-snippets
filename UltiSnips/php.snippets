@@ -22,7 +22,7 @@ snippet doc "PHP Document" b
 <?php
 
 /*
- * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
  *
@@ -36,7 +36,7 @@ snippet classdoc "PHP Document" b
 <?php
 
 /*
- * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
  *
@@ -44,10 +44,10 @@ snippet classdoc "PHP Document" b
  * that was distributed with this package.}
  */
 
-namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+namespace ${5:`!v PhpNamespaceGet()`};
 
 /**
- * @class ${6:`!v Filename('')`}
+ * @class ${6:`!v expand("%:t:r")`}
  *
  * @package $1
  * @version $Id$
@@ -63,7 +63,7 @@ snippet interfacedoc "PHP Document" b
 <?php
 
 /*
- * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
  *
@@ -71,10 +71,10 @@ snippet interfacedoc "PHP Document" b
  * that was distributed with this package.}
  */
 
-namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+namespace ${5:`!v PhpNamespaceGet()`};
 
 /**
- * @interface ${6:`!v Filename('')`}
+ * @interface ${6:`!v expand("%:t:r")`}
  *
  * @package $1
  * @version $Id$
@@ -89,7 +89,7 @@ snippet traitdoc "PHP Document" b
 <?php
 
 /*
- * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
  *
@@ -97,10 +97,10 @@ snippet traitdoc "PHP Document" b
  * that was distributed with this package.}
  */
 
-namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+namespace ${5:`!v PhpNamespaceGet()`};
 
 /**
- * @trait ${6:`!v Filename('')`}
+ * @trait ${6:`!v expand("%:t:r")`}
  *
  * @package $1
  * @version $Id$
@@ -112,18 +112,18 @@ $0trait ${7:$6}
 endsnippet
 
 snippet ns "Namespace" b
-namespace ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+namespace ${1:`!v PhpNamespaceGet()`};
 endsnippet
 
 snippet interface "Interface" b
-interface ${1:`!v Filename(%s)`} 
+interface ${1:`!v expand("%:t:r")`} 
 {
 	public function ${2:method}();
 }
 endsnippet
 
 snippet classc "PHP Class" b
-class ${1:`!v Filename('', 'myClass')`} 
+class ${1:`!v expand("%:t:r") 'myClass')`} 
 {
 	${2:public} function __construct(${3})
 	{
@@ -391,7 +391,7 @@ endsnippet
 snippet sg "Setter and Getter pairs" b
 
 /**
- * set `!p snip.rv=t[1].lower()`.	
+ * Set `!p snip.rv=t[1].lower()`.	
  * 
  * @param ${3:type} $$2 ${4:description}
  * @return void
