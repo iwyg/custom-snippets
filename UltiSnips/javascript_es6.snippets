@@ -1,25 +1,37 @@
+snippet import "import module" b
+import ${1:Module} from "${2:Lib}";
+endsnippet
+
 snippet cl "class"
-class $1:Classname {
-	constructor($2:args) {
+class ${1:Classname} {
+	constructor(${2:args}) {
+		$3
 	}
-}
+};
 endsnippet
 
-snippet classextends "class extends"
-class $1:Classname extends $2:Parent {
-	constructor($2:args) {
+snippet clext "class extends"
+class ${1:Classname} extends ${2:Parent} {
+	constructor(${2:args}) {
+		$3
 	}
-}
+};
 endsnippet
 
-snippet exportclass "export default class"
-export default class $1:Classname {
-	constructor($2:arguments) {
+snippet expcl "export default class"
+export default class ${1:Classname} {
+	constructor(${2:args}) {
+		$3
 	}
-}
+};
 endsnippet
 
-snippet ar "arrow function"
-($1:x) => {
-}
+snippet => "arrow function"
+(${1:x}) => {
+	$2
+};
+endsnippet
+
+snippet 1=> "short arrow function"
+(${1:x}) => ${2:returns}
 endsnippet
