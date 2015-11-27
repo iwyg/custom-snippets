@@ -4,14 +4,18 @@ snippet inhdc "inheritdoc declaration"
  */
 endsnippet
 
-snippet oget "member getter"
+snippet @var "inline @var annotation"
+/** @var ${1:mixed} */
+endsnippet
+
+snippet mget "member getter"
 public function get${1:Name}($${2:attribute}) 
 {
 	return isset($this->${3:$2s}[$${4:$2}]) ? $this->${5:$3}[$$4] : null;
 }
 endsnippet
 
-snippet oset "member setter"
+snippet mset "member setter"
 public function set${1:Name}($${2:attribute}, $${3:value}) 
 {
 	$this->${4:$2s}[$${4:$2}] = $$3;
@@ -193,18 +197,31 @@ public function ${2:name}(${3})
 }
 endsnippet
 
+snippet pubmi
+public function ${2:name}(${3});
+endsnippet
+
 snippet privm
 private function ${2:name}(${3})
 {
-	// ${4:body}
+// ${4:body}
 }
 endsnippet
+
+snippet privmi
+private function ${2:name}(${3});
+endsnippet
+
 
 snippet prom
 protected function ${2:name}(${3})
 {
 	// ${4:body}
 }
+endsnippet
+
+snippet promi
+protected function ${2:name}(${3});
 endsnippet
 
 snippet const
@@ -412,3 +429,4 @@ public function get$1()
 }
 
 endsnippet
+

@@ -2,7 +2,7 @@ snippet unittest "PHPUnit unit test" b
 <?php
 
 /**
- * This File is part of the ${1:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`} package
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
  *
  * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
  *
@@ -10,7 +10,7 @@ snippet unittest "PHPUnit unit test" b
  * that was distributed with this package.}
  */
 
-namespace ${5:`!v substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\', 'g')`};
+namespace ${5:`!v PhpNamespaceGet()`};
 
 class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnit_Framework_TestCase
 {
@@ -26,8 +26,12 @@ class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnit_Framework_TestCas
 }
 endsnippet
 
+snippet mockb "get Mockbuilder"
+$this->getMockbuilder('${1:ClassName}')${2:->disableOriginalConstructor()}->getMock()${3};
+endsnippet
+
 snippet mock "get Mock"
-$this->getMock(${1:'ClassName'})${2}
+$this->getMock('${1:ClassName}')${2};
 endsnippet
 
 snippet test "test case"
