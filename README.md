@@ -1,3 +1,3 @@
 # Vim Snippets   
 
-Just some personal sinppets I tend to use on a regulat basis.
+Just some personal sinppets I tend to use on a regular basis.
