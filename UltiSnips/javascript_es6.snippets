@@ -1,3 +1,7 @@
+snippet @fl "flow linter annotation"
+/* @flow */
+endsnippet
+
 snippet import "import module" b
 import ${1:Module} from "${2:Lib}";
 endsnippet
@@ -34,4 +38,31 @@ endsnippet
 
 snippet 1=> "short arrow function"
 (${1:x}) => ${2:returns}
+endsnippet
+
+snippet webpackc "Webpack Config" b
+var path = require('path');
+
+module.exports = {
+  module: {
+    resolve: {
+      extensions: ['', '.jsx', '.js', '.ts']
+    },
+    entry: [
+      path.resolve(__dirname + '${1:src/index.js}')
+    ],
+    output: {
+      path: path.resolve(__dirname + '${2:dist}'),
+      publicPath: '$2/'
+    },
+    loaders:[
+      { test: /\.jsx?$/, exclude: '/node_modules', loader: 'babel' },
+      { test: /\.ts$/, exclude: '/node_modules', loader: 'typescript' }
+    ]
+  },
+  stats: {
+    colors: true
+  },
+  devtool: 'source-map'
+};
 endsnippet
