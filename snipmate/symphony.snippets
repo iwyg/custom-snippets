@@ -1,0 +1,110 @@
+#entrymanager
+snippet enm
+	EntryManager::${1:method}${2}
+
+snippet enmadd
+	EntryManager::add($entry)${2}
+
+snippet enmcreate
+	EntryManager::create()${1}
+
+snippet enmdelete
+	EntryManager::delete(${1:entries}, ${2:section_id})${3}
+
+snippet enmedit
+	EntryManager::edit($entry)${2}
+
+snippet enmfetch
+	EntryManager::fetch(${1:arguments})${2}
+
+snippet enmfetchbp
+	EntryManager::fetchByPage(${1:arguments})${2}
+
+snippet enmfetchc
+	EntryManager::fetchCount(${1:section_id}, ${2:where}, ${3:joins}, ${4:true})${5}
+
+snippet enmfetch
+	EntryManager::fetchEntrySectionID(${1:entry_id})${2}
+
+snippet enmgfs
+	EntryManager::getFetchSorting()${1}
+
+snippet enmsfs
+	EntryManager::setFetchSorting(${1:field_id}, ${2:ASC})${3}
+
+snippet enmsfsd
+	EntryManager::setFetchSortingDirection(${1:ASC})${2}
+
+snippet enmsfsf
+	EntryManager::setFetchSortingField(${1:field_id})${2}
+
+# fieldmanager
+snippet fm
+	FieldManager::${1:method}
+
+snippet fmcreate
+	FieldManager::create(${1:type})${2}
+
+snippet fmadd
+	FieldManager::add(${1:fields})${2}
+
+snippet fmdelete
+	FieldManager::delete(${1:id})${2}
+
+snippet fmedit
+	FieldManager::edit(${1:id}, ${2:fields})${3}
+
+snippet fmfetch
+	FieldManager::fetch(${1:arguments})${2}
+
+snippet fmsave
+	FieldManager::saveSettings(${1:id}, ${2:settings})${3}
+
+snippet fmlistall
+	FieldManager::listAll()${1}
+
+#sectionmanager
+snippet sm
+	SectionManager::(${1:method})${2}
+
+snippet smadd
+	SectionManager::add(${1:settings})${2}
+
+snippet smcreate
+	SectionManager::create()${1}
+
+snippet smedit
+	SectionManager::edit(${1:section_id})${2}
+
+snippet smdelete
+	SectionManager::delete(${1:section_id})${2}
+
+snippet smfetch
+	SectionManager::fetch(${1:ids})${2}
+
+snippet smfetchid
+	SectionManager::fetchIDFromHandle(${1:handle})${2}
+
+# classes
+snippet newext
+	class Extension_${1:name} extends Extension 
+	{
+		public function install()
+		{
+			${2:code}
+		}
+
+		public function uninstall()
+		{
+			${3:code}
+		}
+	}
+
+snippet extpage
+	class ContentExtension${1:name} extends ${2:prefix}Page 
+	{
+		public function _viewIndex()
+		{
+			${3:code}
+		}
+	}

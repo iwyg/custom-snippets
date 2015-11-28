@@ -1,0 +1,39 @@
+# backbone
+snippet bb 
+	Backbone${1:.}${2:Constuctor}
+endsnippet
+# Model extend
+snippet bbm
+	Backbone.Model.extend({
+		initialize: function (${1}) {
+			${2}
+		}
+	});
+endsnippet
+
+# View extend
+snippet bbv
+	Backbone.View.extend({ 
+		initialize: function (${1}) {
+			${2}
+		}
+	});
+endsnippet
+
+# Collection extend
+snippet bbc
+	Backbone.Collection.extend({ 
+		initialize: function (${1}) {
+			${2}
+		}
+	});
+endsnippet
+
+# Router extend
+snippet bbr
+	Backbone.Router.extend({ 
+		initialize: function (${1}) {
+			${2}
+		}
+	});
+endsnippet
