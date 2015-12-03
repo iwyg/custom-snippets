@@ -1,0 +1,15 @@
+snippet rclass "react create class"
+react.createClass({
+	$1
+})
+endsnippet
+
+snippet rc "React Component"
+var ${1:Component} = ${2:React}.createClass({
+	render: function () {
+		return (
+			<${3:div}>$4</$3>
+		);
+	}
+});
+endsnippet
