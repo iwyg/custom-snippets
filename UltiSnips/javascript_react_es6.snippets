@@ -1,10 +1,21 @@
 snippet rc "ES6 React Component"
-
 class ${1:Component} extends ${2:React}.Component {
 	render() {
 		return (
 			<${3:div}>$4</$3>
 		);
 	}
+}
+endsnippet
+
+snippet cdm "componentDidMount()"
+componentDidMount() {
+  $1
+}
+endsnippet
+
+snippet pt "propTypes"
+${1:Component}.propTypes = {
+	$2
 };
 endsnippet

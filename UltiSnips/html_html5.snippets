@@ -61,3 +61,17 @@ snippet ga "Google analytics"
   ga('create','UA-${1:XXXXX}-${2:X}','auto');ga('send','pageview');
 </script>
 endsnippet
+
+snippet t "<tag>" b
+<${1:div}>
+	$2
+</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet ti "<tag> inline"
+<${1:div}>$2</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet todo "" b
+<!-- TODO: `git config user.name` <`git config user.email`>; ${1:description} `1v strftime("%c")` -->
+endsnippet
