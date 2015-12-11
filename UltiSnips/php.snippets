@@ -1,0 +1,435 @@
+snippet inhdc "inheritdoc declaration"
+/**
+ * {@inheritdoc}
+ */
+endsnippet
+
+snippet @var "inline @var annotation"
+/** @var ${1:mixed} */
+endsnippet
+
+snippet mget "member getter"
+public function get${1:Name}($${2:attribute}) 
+{
+	return isset($this->${3:$2s}[$${4:$2}]) ? $this->${5:$3}[$$4] : null;
+}
+endsnippet
+
+snippet mset "member setter"
+public function set${1:Name}($${2:attribute}, $${3:value}) 
+{
+	$this->${4:$2s}[$${4:$2}] = $$3;
+}
+endsnippet
+
+snippet doc "PHP Document" b
+<?php
+
+/*
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
+ *
+ * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
+ *
+ * ${4:For full copyright and license information, please refer to the LICENSE file
+ * that was distributed with this package.}
+ */
+
+endsnippet
+
+snippet classdoc "PHP Document" b
+<?php
+
+/*
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
+ *
+ * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
+ *
+ * ${4:For full copyright and license information, please refer to the LICENSE file
+ * that was distributed with this package.}
+ */
+
+namespace ${5:`!v PhpNamespaceGet()`};
+
+/**
+ * @class ${6:`!v expand("%:t:r")`}
+ *
+ * @package $1
+ * @version $Id$
+ * @author $2 <$3>
+ */
+$0class ${7:$6} ${8}
+{
+	${9}
+}
+endsnippet
+
+snippet interfacedoc "PHP Document" b
+<?php
+
+/*
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
+ *
+ * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
+ *
+ * ${4:For full copyright and license information, please refer to the LICENSE file
+ * that was distributed with this package.}
+ */
+
+namespace ${5:`!v PhpNamespaceGet()`};
+
+/**
+ * @interface ${6:`!v expand("%:t:r")`}
+ *
+ * @package $1
+ * @version $Id$
+ * @author $2 <$3>
+ */
+interface ${7:$6}$0
+{
+}
+endsnippet
+
+snippet traitdoc "PHP Document" b
+<?php
+
+/*
+ * This File is part of the ${1:`!v PhpNamespaceGet()`} package
+ *
+ * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
+ *
+ * ${4:For full copyright and license information, please refer to the LICENSE file
+ * that was distributed with this package.}
+ */
+
+namespace ${5:`!v PhpNamespaceGet()`};
+
+/**
+ * @trait ${6:`!v expand("%:t:r")`}
+ *
+ * @package $1
+ * @version $Id$
+ * @author $2 <$3>
+ */
+$0trait ${7:$6}
+{
+}
+endsnippet
+
+snippet ns "Namespace" b
+namespace ${1:`!v PhpNamespaceGet()`};
+endsnippet
+
+snippet interface "Interface" b
+interface ${1:`!v expand("%:t:r")`} 
+{
+	public function ${2:method}();
+}
+endsnippet
+
+snippet classc "PHP Class" b
+class ${1:`!v expand("%:t:r") 'myClass')`} 
+{
+	${2:public} function __construct(${3})
+	{
+	}
+}
+endsnippet
+
+snippet absc "PHP abstract Class" b
+abstract class ${1:name} 
+{
+	${2:public} function __construct()	
+	{
+		
+	}
+}
+endsnippet
+
+snippet extendabstractclass "PHP extend abstract class"
+abstract class ${1:name} extends ${2:class}
+{
+	${3:public} function __construct()	
+	{
+		// ${4:body}
+	}
+}
+endsnippet
+
+snippet _c "constructor"
+${1:public} function __construct(${2:args})
+{
+
+}
+endsnippet
+
+snippet _d "destructor"
+${1:public} function __destruct(${2:args})
+{
+
+}
+endsnippet
+
+snippet mget
+public function __get(${1:prop})
+{
+
+}
+endsnippet
+
+snippet mset
+public function __set(${1:prop}, ${2:value})
+{
+
+}
+endsnippet
+
+snippet method
+${1:public} function ${2:name}(${3})
+{
+	// ${4:body}
+}
+endsnippet
+
+snippet pubm
+public function ${2:name}(${3})
+{
+	// ${4:body}
+}
+endsnippet
+
+snippet pubmi
+public function ${2:name}(${3});
+endsnippet
+
+snippet privm
+private function ${2:name}(${3})
+{
+// ${4:body}
+}
+endsnippet
+
+snippet privmi
+private function ${2:name}(${3});
+endsnippet
+
+
+snippet prom
+protected function ${2:name}(${3})
+{
+	// ${4:body}
+}
+endsnippet
+
+snippet promi
+protected function ${2:name}(${3});
+endsnippet
+
+snippet const
+const ${1:name} = ${2:value}${3}
+endsnippet
+
+snippet const
+const ${1:name} = ${2:value}${3}
+endsnippet
+
+snippet prop
+${1:public}${2:type} $${3:name}${4}
+endsnippet
+
+snippet ocall "call method on an object"
+$${1:obj}->${4:methood}(${3:args})${4}
+endsnippet
+
+
+# functions
+snippet glob
+glob(${1:path});
+endsnippet
+
+snippet globit "glob iterator" 
+foreach (glob(${1:path} as ${2:name})) {
+	${3}
+}
+endsnippet
+	
+snippet pmatch "preg_match"
+preg_match('${1:needle}', ${2:heystack}, ${3:matches})${4}
+endsnippet
+
+snippet psplit
+preg_split('${1:needle}', ${2:heystack}, ${3:-1}, ${4:PREG_SPLIT_NO_EMPTY})${5}
+endsnippet
+
+snippet ia "in_array"
+in_array(${1:needle}, ${2:heystack})${3}
+endsnippet
+
+snippet extract
+extract(${1:array})
+endsnippet
+
+snippet list "list operator"
+list(${2:valiables}) = ${1:array}
+endsnippet
+# operators
+
+snippet andor
+(${1} && ${2}) || ${3}
+endsnippet
+
+snippet ten "ternary operator: condifion ? case_a : case_b"
+${1:condition} ? ${2} : ${3}
+endsnippet
+
+# statements
+snippet if "if (…)"
+if (${1:condition}) {
+	${2}	
+}
+endsnippet
+
+snippet ifel "if {} else {}"
+if (${1:condition}) {
+	${2}	
+} else {
+	${3}	
+}
+endsnippet
+
+snippet while "while (…)" 
+while (${1:condition}) {
+	${2:do}
+}
+endsnippet
+
+snippet for "for (…;…;)"
+for (${1}; ${2}; ${3}) {
+	${4:do}
+}
+endsnippet
+
+snippet feach "foreach ($array as $value)"
+foreach ($${1:data} as $${2:val}) {
+	${3:do}
+}
+endsnippet
+
+snippet feachas "foreach ($array as $key => val) ..."
+foreach ($${1:data} as $${2:key} => $${3:val}) {
+	${4:do}
+}
+endsnippet
+# misc
+snippet asocarr
+[
+	'${1:key}' => ${2:value}
+]${3}
+endsnippet
+
+# globals
+
+snippet post
+$_POST
+endsnippet
+snippet postkey
+$_POST['${1:key}']
+endsnippet
+
+snippet get
+	$_GET
+endsnippet
+
+snippet getkey
+	$_GET['${1:key}']
+endsnippet
+
+snippet request
+	$_REQUEST
+endsnippet
+
+snippet requestkey
+	$_REQUEST['${1:key}']
+endsnippet
+
+snippet server
+	$_SERVER
+endsnippet
+
+snippet serverkey
+	$_SERVER['${1:key}']
+endsnippet
+
+# php filter
+snippet filter_hv "filter_has_var"
+	filter_has_var(${1:INPUT_POST}, ${1:var})
+endsnippet
+
+snippet filter_id "filter_id"
+	filter_id(${1:name})
+endsnippet
+
+snippet filter_ia "filter_input_array"
+	filter_input_array(${1:INPUT_POST}, ${2:filterarray})
+endsnippet
+
+snippet filter_in "filter_input"
+	filter_input(${1:INPUT_POST}, ${2:name}, ${3:FILTER_VALIDATE_EMAIL})
+endsnippet
+
+snippet filter_li "filter_list"
+	filter_list()
+endsnippet
+
+snippet filter_va "filter_var_array"
+	filter_var_array(${1:array}, ${2:definition});
+endsnippet
+
+snippet filter_v "filter_var"
+	filter_var(${1:variable}, ${2:FILTER_SANITIZE_STRING}, ${3:options});
+endsnippet
+
+# Misc
+snippet docblock
+/**
+ * ${1:Class}
+ *
+ * @package ${2:Package}
+ * @version ${3:Version}
+ * @copyright 2012-2015 ${4:Thomas Appel}. <http://thomas-appel.com>
+ * @author Thomas Appel <${5:mail@thomas-appel.com}>
+ * @license MIT Licence ${6:http://opensource.org/licenses/MIT}
+ */
+endsnippet
+
+snippet vd "var_dump"
+var_dump(${1:variable});
+endsnippet
+
+snippet sg "Setter and Getter pairs" b
+
+/**
+ * Set `!p snip.rv=t[1].lower()`.	
+ * 
+ * @param ${3:type} $$2 ${4:description}
+ * @return void
+ */
+public function set${1:Property}($${2:value})
+{
+	$this->`!p snip.rv=t[1].lower()` = $$2;	
+}
+
+/**
+ * Get `!p snip.rv=t[1].lower()`.	
+ * 
+ * @return mixed
+ */
+public function get$1()
+{
+	return $this->`!p snip.rv=t[1].lower()`;	
+}
+
+endsnippet
+snippet todo
+@todo `git config user.name` <`git config user.email`>; `1v strftime("%c")` -->
+ ${1:description} 
+endsnippet

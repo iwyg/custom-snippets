@@ -1,0 +1,14 @@
+snippet strict "use strict statement"
+'use strict';
+endsnippet
+
+snippet closure "Closure construct"
+(function ($1, undefined) {
+	'use strict';
+	$3		
+}(this.${1:property}));
+endsnippet
+
+snippet log "console.log(...)"
+console.log($1);
+endsnippet

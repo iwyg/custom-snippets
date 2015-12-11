@@ -1,0 +1,27 @@
+snippet definecl "requirejs define with closure " 
+	(function (${2:define}) {
+		define([${3:routes}], function (${4:definitions}) {
+			
+		});
+	}(${1:this.define}));
+endsnippet
+
+snippet requirecl "requirejs require with closure" 
+	(function (${2:require}) {
+		require([${3:routes}], function (${4:definitions}) {
+			
+		});
+	}(${1:this.require}));
+endsnippet
+
+snippet define "requirejs define" 
+	define([${3:routes}], function (${4:definitions}) {
+		
+	});
+endsnippet
+
+snippet require "requirejs require"
+	require([${3:routes}], function (${4:definitions}) {
+		
+	});
+endsnippet

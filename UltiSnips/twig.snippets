@@ -1,0 +1,15 @@
+extends xml
+extends html
+
+snippet block "Block" !b
+{% block $1 %}$2{% endblock %}
+endsnippet
+
+snippet if "Block" !b
+{% if $1 %}$2{% endif %}
+endsnippet
+
+snippet include "Block" !b
+{% include "$1" %}
+endsnippet
+

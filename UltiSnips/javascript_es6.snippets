@@ -1,0 +1,99 @@
+snippet @fl "flow linter annotation"
+/* @flow */
+endsnippet
+
+snippet import "import module" b
+import ${1:Module} from '${2:Lib}';
+endsnippet
+
+snippet cl "class"
+class ${1:Classname} {
+	constructor(${2:args}) {
+		$3
+	}
+};
+endsnippet
+
+snippet class "class"
+class ${1:Classname} {
+	constructor(${2:args}) {
+		$3
+	}
+}
+endsnippet
+
+snippet clext "class extends"
+class ${1:Classname} extends ${2:Parent} {
+	constructor(${2:args}) {
+		$3
+	}
+}
+endsnippet
+
+snippet classextends "class extends"
+class ${1:Classname} extends ${2:Parent} {
+	constructor(${2:args}) {
+		$3
+	}
+}
+endsnippet
+
+snippet expcl "export default class"
+export default class ${1:Classname} {
+	constructor(${2:args}) {
+		$3
+	}
+}
+endsnippet
+
+snippet => "arrow function"
+(${1:x}) => {
+	$2
+}
+endsnippet
+
+snippet 1=> "short arrow function"
+(${1:x}) => ${2:returns}
+endsnippet
+
+snippet constr "class constructor"
+constructor(${1:args}) {
+	${2:super($1);}
+	$3
+}
+endsnippet
+
+snippet modex "module.exports"
+module.exports = $1;
+endsnippet
+
+snippet expd "export default ..."
+export default ${1:Module};
+endsnippet
+
+snippet webpackc "Webpack Config" b
+var path = require('path');
+
+module.exports = {
+  module: {
+    resolve: {
+      extensions: ['', '.jsx', '.js', '.ts']
+    },
+    entry: [
+      path.resolve(__dirname + '${1:src/index.js}')
+    ],
+    output: {
+      path: path.resolve(__dirname + '${2:dist}'),
+      publicPath: '$2/'
+    },
+    loaders:[
+      { test: /\.jsx?$/, exclude: '/node_modules', loader: 'babel' },
+      { test: /\.ts$/, exclude: '/node_modules', loader: 'typescript' }
+    ]
+  },
+  stats: {
+    colors: true
+  },
+  devtool: 'source-map'
+};
+endsnippet

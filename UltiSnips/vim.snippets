@@ -1,0 +1,10 @@
+snippet phprpoj "php project settings" 
+" force PSR-2 standard 
+let g:syntastic_php_phpcs_args = ${1:"--report=csv --standard=PSR2"}
+let g:pdv_cfg_Type      = ${2:"mixed"}
+let g:pdv_cfg_Package   = ${3:""}
+let g:pdv_cfg_Version   = ${4:"$Id$"}
+let g:pdv_cfg_Author    = ${5:"Thomas Appel <mail@thomas@appel.com>"}
+let g:pdv_cfg_Copyright = ${6:"2012-2015 Thomas Appel. <mail@thomas@appel.com>"}
+let g:pdv_cfg_License   = ${7:"MIT"}
+endsnippet
