@@ -1,0 +1,51 @@
+snippet shebang "/usr/bin/..."
+#!/usr/bin/${1:sh}
+endsnippet
+
+snippet env "/usr/bin/env ..."
+#!/usr/bin/env ${1:sh}
+endsnippet
+
+snippet args "" 
+	for ${1:key} in "$@"; do
+		case \$$1 in 
+			--${1:longopt}|-${2:shoropt})
+			${3:VAR}=$3
+			shift 1
+			continue
+			;;
+			*)
+			$4=${5:${VISUAL}}
+			;;
+        esac
+    shift
+done
+endsnippet
+
+snippet cred "color red"
+\e[m31$0\e[m
+endsnippet
+
+snippet cblk "color black"
+\e[m30$0\e[m
+endsnippet
+
+snippet cyel "color yellow"
+\e[m33$0\e[m
+endsnippet
+
+snippet cblu "color blue"
+\e[m34$0\e[m
+endsnippet
+
+snippet ccyn "color cyan"
+\e[m36$0\e[m
+endsnippet
+
+snippet cmgn "color magenta"
+\e[m35$0\e[m
+endsnippet
+
+snippet cwht "color white"
+\e[m37$0\e[m
+endsnippet
