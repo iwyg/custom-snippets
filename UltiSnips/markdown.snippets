@@ -9,3 +9,15 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 endsnippet
+
+snippet phpbadges ""
+[![Author](http://img.shields.io/badge/author-iwyg-blue.svg?style=flat-square)](https://github.com/${1:`git config user.name`})
+[![Source Code](http://img.shields.io/badge/source-lucid/signal-blue.svg?style=flat-square)](https://github.com/${2:$1}/${3:repo}/tree/${4:`git rev-parse --abbrev-ref HEAD`})
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/$2/$3/blob/$4/LICENSE.md)
+
+[![Build Status](https://img.shields.io/travis/$2/$3/$4.svg?style=flat-square)](https://travis-ci.org/$2/$3)
+<!--
+[![Code Coverage](https://img.shields.io/coveralls/$2/$3/$4.svg?style=flat-square)](https://coveralls.io/r/$2/$3)
+-->
+[![HHVM](https://img.shields.io/hhvm/${5:package}/dev-$4.svg?style=flat-square)](http://hhvm.h4cc.de/package/$5)
+endsnippet

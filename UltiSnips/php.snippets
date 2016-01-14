@@ -427,9 +427,16 @@ public function get$1()
 {
 	return $this->`!p snip.rv=t[1].lower()`;	
 }
+endsnippet
 
+snippet tc "try catch"
+try {
+	${2:${VISUAL}}
+} catch (${1:\Exception} $e) {
+	${3:${VISUAL}}
+}
 endsnippet
 snippet todo
-@todo `git config user.name` <`git config user.email`>; `1v strftime("%c")` -->
- ${1:description} 
+@todo `git config user.name` <`git config user.email`>; `!v strftime("%c")` -->
+* ${1:description} 
 endsnippet
