@@ -4,7 +4,7 @@ snippet unittest "PHPUnit unit test" b
 /**
  * This File is part of the ${1:`!v PhpNamespaceGet()`} package
  *
- * (c) ${2:`git config user.name`} <${3:`git config user.email`}> 
+ * (c) ${2:`git config user.name`} <${3:`git config user.email`}>
  *
  * ${4:For full copyright and license information, please refer to the LICENSE file
  * that was distributed with this package.}
@@ -68,7 +68,7 @@ snippet isinst
 /** @test */
 public function itShouldBeInstantiable()
 {
-	$0
+	$this->assertInstanceOf('$1', $2);
 }
 endsnippet
 
@@ -83,7 +83,7 @@ public function test${1:TestCase}($${2:arguments})
 	$0
 }
 
-public function ${3:dataProvider}() 
+public function ${3:dataProvider}()
 {
 	return [
 	];

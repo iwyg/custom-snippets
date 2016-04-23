@@ -1,10 +1,15 @@
 snippet rc "ES6 React Component"
-class ${1:Component} extends ${2:React}.Component {
+class ${1:Component} extends ${2:React.}Component {
 	render() {
 		return (
 			<${3:div}>$4</$3>
 		);
 	}
+}
+endsnippet
+snippet cwm "componentWillMount()"
+componentWillMount() {
+  $1
 }
 endsnippet
 
@@ -14,8 +19,24 @@ componentDidMount() {
 }
 endsnippet
 
+snippet cdu "componentDidUnmount()"
+componentDidUnmount() {
+  $1
+}
+endsnippet
+
 snippet pt "propTypes"
 ${1:Component}.propTypes = {
 	$2
 };
+endsnippet
+
+snippet render "render() {}"
+render() {
+	return (
+		<${1:div}>
+			$2
+		</${1/(\w+).*/$1/}>
+	);
+}
 endsnippet

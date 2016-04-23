@@ -52,6 +52,14 @@ snippet => "arrow function"
 }
 endsnippet
 
+snippet cfunc "const foo = () => {}"
+const ${1:CONST} = =>$2;
+endsnippet
+
+snippet lfunc "const foo = () => {}"
+let ${1:CONST} = =>$2;
+endsnippet
+
 snippet 1=> "short arrow function"
 (${1:x}) => ${2:returns}
 endsnippet
@@ -63,37 +71,44 @@ constructor(${1:args}) {
 }
 endsnippet
 
+snippet spobj
+let {$1} = $2;
+endsnippet
+
 snippet modex "module.exports"
-module.exports = $1;
+module.exports = ${1:{
+  $2
+}};
 endsnippet
 
 snippet expd "export default ..."
 export default ${1:Module};
 endsnippet
 
-snippet webpackc "Webpack Config" b
+snippet wpconf "Webpack Config" b
 var path = require('path');
 
+
 module.exports = {
+  context: path.join(__dirname),
+  entry: path.resolve(__dirname + '/${1:index.js}'),
+  output: {
+    path: path.join(__dirname),
+    //filename: 'bundle.js',
+    publicPath: '${2:dist}'
+  },
   module: {
     resolve: {
-      extensions: ['', '.jsx', '.js', '.ts']
-    },
-    entry: [
-      path.resolve(__dirname + '${1:src/index.js}')
-    ],
-    output: {
-      path: path.resolve(__dirname + '${2:dist}'),
-      publicPath: '$2/'
+      extensions: ['', '.jsx', '.js']
     },
     loaders:[
       { test: /\.jsx?$/, exclude: '/node_modules', loader: 'babel' },
-      { test: /\.ts$/, exclude: '/node_modules', loader: 'typescript' }
     ]
   },
   stats: {
     colors: true
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  plugins: []
 };
 endsnippet
